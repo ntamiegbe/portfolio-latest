@@ -1,14 +1,19 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './App.css'
+import Home from './pages/Home'
+import SingleProject from './pages/SingleProject'
+import Navbar from './components/Navbar'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route element={<Home />} path='/' exact />
+        <Route element={<SingleProject />} path='/projects/:slug' exact />
+      </Routes>
+    </Router>
   )
 }
 
