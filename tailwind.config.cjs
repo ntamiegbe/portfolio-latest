@@ -7,14 +7,24 @@ module.exports = {
   theme: {
     colors: {
       'dark': '#131313',
+      'white': '#ffffff',
       'light': '#474B4F',
-      'gray': '#6B6E70',
+      'gray': '#A5A5A5',
       'secondary': {
         100: '#61892F',
-        200: '#86C232'
+        200: '#86C232',
+        300: '#CCE5A8'
       } 
     },
-    extend: {},
+    extend: {
+      backgroundImage:
+      {
+        'hero': "url('./src/assets/images/hero-bg.svg')"
+      }
+    },
+    fontFamily: {
+      'lato': ['"Amatic SC"', 'cursive'],
+    },
   },
   plugins: [],
 }

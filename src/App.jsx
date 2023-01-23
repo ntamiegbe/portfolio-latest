@@ -3,11 +3,13 @@ import './App.css'
 import Home from './pages/Home'
 import SingleProject from './pages/SingleProject'
 import Navbar from './components/Navbar'
+import Mouse from './Mouse'
 
 function App() {
 
   return (
     <Router>
+      <Mouse />
       <Navbar />
       <Routes>
         <Route element={<Home />} path='/' exact />

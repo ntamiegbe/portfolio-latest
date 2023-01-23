@@ -1,3 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer base {
+    html {
+        font-family: 'Amatic SC', cursive;
+    }
+}
+
+* {
+    cursor: none;
+}
+
+.cursor-dot,
+.cursor-dot-outline {
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.cursor-dot{
+    width: 8px;
+    height: 8px;
+    background-color: #86C232;
+}
+
+.cursor-dot-outline {
+    width: 35px;
+    height: 35px;
+    background-color: #CCE5A8;
+}
