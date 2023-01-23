@@ -5,12 +5,13 @@ import { AiOutlineClose } from "react-icons/ai"
 
 import { useState } from "react";
 import { Link } from 'react-router-dom';
+import Switcher from './Switcher';
 
 export default function Navbar() {
     const [navbar, setNavbar] = useState(false);
 
     return (
-        <nav className="w-full bg-dark">
+        <nav className="w-full dark:bg-dark bg-light">
             <div className="justify-between px-4 mx-auto md:items-center md:flex md:px-8">
                 <div className="flex items-center justify-between md:py-4 md:block">
                     <Link to="/">
@@ -27,7 +28,6 @@ export default function Navbar() {
                                 <BiMenuAltRight className='text-[25px] text-secondary-200' />
                             )}
                         </button>
-
                     </div>
                 </div>
                 <div>
@@ -66,7 +66,7 @@ export default function Navbar() {
                                     Contact
                                 </a>
                             </li>
-                            
+                            <Switcher />
                         </ul>
 
                         <div className="mt-3 space-y-2 lg:hidden md:inline-block">
