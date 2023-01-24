@@ -33,7 +33,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route element={<Home />} path='/' exact />
-        <Route element={<SingleProject />} path='/projects/:slug' exact />
+        <Route element={<SingleProject />} path='/projects/:slug' />
       </Routes>
     </Router>
   )

@@ -20,7 +20,7 @@ export default function Switcher() {
                 style={{ color: "#86C232" }}
                 checked={darkSide}
                 onChange={toggleDarkMode}
-                size={30}
+                size={25}
             />
         </>
     );

@@ -17,7 +17,7 @@
 }
 
 *::-webkit-scrollbar-thumb {
-    background-color: #CCE5A8;
+    background-color: #6a6d65;
     border-radius: 10px
 }
 @tailwind components;
