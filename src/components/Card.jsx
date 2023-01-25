@@ -4,32 +4,24 @@ import { FiGithub, FiExternalLink } from 'react-icons/fi'
 
 const Card = () => {
     return (
-        <div class="bg-transparent border border-secondary-200 rounded-md bg-gray-800 shadow-lg p-3 mt-[4.5rem] flex">
-            <div class="md:flex px-4 leading-none max-w-4xl">
-                <div class="flex-none mx-3">
-                    <img src={Logo} alt="pic" class="h-[280px] w-65 rounded-md transform -translate-x-12 bg-lightgray -translate-y-8 border border-secondary-200 shadow-xl" />
-                </div>
-                <div class="flex-col items-center justify-center text-gray">
-                    <a href='#__' class="pt-4 text-3xl font-bold mx-4 text-lightgray hover:text-secondary-200">Shopee</a>
-                    <p class="hidden md:block px-4 my-4 text-2xl">
-                        In Gotham City, mentally troubled comedian Arthur Fleck is disregarded and mistreated by society. He then embarks on a downward spiral of revolution and bloody crime. This path brings him face-to-face with his alter-ego: the Joker.
-                    </p>
-                    <div class="text-base flex">
-                        <a class="border border-secondary-200 text-secondary-200 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-secondary-100 focus:outline-none focus:shadow-outline">React</a>
-
-                        <a class="border border-secondary-200 text-secondary-200 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-secondary-100 focus:outline-none focus:shadow-outline">Redux</a>
-
-                        <a class="border border-secondary-200 text-secondary-200 rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-secondary-100 focus:outline-none focus:shadow-outline">Tailwind CSS</a>
+        <div class="min-h-screen bg-gradient-to-tr from-red-300 to-yellow-200 flex justify-center items-center py-20">
+            <div class="md:px-4 md:grid md:grid-cols-2 lg:grid-cols-3 gap-5 space-y-4 md:space-y-0">
+                <div class="max-w-sm bg-lightgray px-6 pt-6 pb-2 rounded-xl shadow-lg transform hover:scale-105 transition duration-500">
+                    <div class="relative">
+                        <img class="w-full rounded-xl" src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="Colors" />
+                    </div>
+                    <h1 class="mt-4 text-secondary-200 text-2xl font-bold">Javascript Bootcamp for Absolute Beginners</h1>
+                    <div class="my-4">
+                        <div class="flex space-x-1 items-center">
+                            <span>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-indigo-600 mb-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </span>
+                            <p>1:34:23 Minutes</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="flex justify-center space-x-5 items-end p-4 text-secondary-200">
-                <a href="#__">
-                    <FiExternalLink className='h-6 w-6' />
-                </a>
-                <a href="#__">
-                    <FiGithub className='h-6 w-6' />
-                </a>
             </div>
         </div>
     )
