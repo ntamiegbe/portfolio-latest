@@ -26,6 +26,7 @@ module.exports = {
     },
     fontFamily: {
       'lato': ['"Amatic SC"', 'cursive'],
+      'normal': ['Yantramanav', 'sans-serif'],
     },
   },
   plugins: [],

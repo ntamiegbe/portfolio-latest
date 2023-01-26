@@ -33,31 +33,31 @@ export default function Navbar() {
                 <div>
                     <div className={`flex-1 justify-self-center pb-3 mt-8 lg:block lg:pb-0 lg:mt-0 ${navbar ? "block h-screen" : "hidden"}`}>
                         <ul className="items-center justify-center space-y-8 lg:flex lg:space-x-10 lg:space-y-0">
-                            <li className="text-gray hover:text-secondary-200 font-semibold text-[25px]">
+                            <li className="text-gray hover:text-secondary-200 font-semibold text-[20px]">
                                 <a href="">
                                     <span className='text-secondary-100'>01. </span>
                                     Home
                                 </a>
                             </li>
-                            <li className="text-gray hover:text-secondary-200 font-semibold text-[25px]">
+                            <li className="text-gray hover:text-secondary-200 font-semibold text-[20px]">
                                 <a href="">
                                     <span className='text-secondary-100'>02. </span>
                                     Skills
                                 </a>
                             </li>
-                            <li className="text-gray hover:text-secondary-200 font-semibold text-[25px]">
+                            <li className="text-gray hover:text-secondary-200 font-semibold text-[20px]">
                                 <a href="">
                                     <span className='text-secondary-100'>03. </span>
                                     Portfolio
                                 </a>
                             </li>
-                            <li className="text-gray hover:text-secondary-200 font-semibold text-[25px]">
+                            <li className="text-gray hover:text-secondary-200 font-semibold text-[20px]">
                                 <a href="">
                                     <span className='text-secondary-100'>04. </span>
                                     Testimonials
                                 </a>
                             </li>
-                            <li className="text-gray hover:text-secondary-200 font-semibold text-[25px]">
+                            <li className="text-gray hover:text-secondary-200 font-semibold text-[20px]">
                                 <a href="">
                                     <span className='text-secondary-100'>05. </span>
                                     Contact
