@@ -1,6 +1,7 @@
 import React from 'react'
 import { Typewriter } from 'react-simple-typewriter'
 import SocialMediaLinks from '../components/SocialMediaLinks'
+import { motion } from "framer-motion"
 
 const Hero = () => {
     return (
@@ -8,7 +9,12 @@ const Hero = () => {
             <div className="hidden lg:flex flex-1 relative">
                 <SocialMediaLinks />
             </div>
-            <div className='flex flex-2 flex-col px-[2rem] max-w-[800px]'>
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 2.7 }}
+                className='flex flex-2 flex-col px-[2rem] max-w-[800px]'
+            >
                 <h1 className='text-secondary-200 font-bold lg:text-[30px] text-[20px]' id='name'>
                     Hi, I'm Ntami
                 </h1>
@@ -25,7 +31,7 @@ const Hero = () => {
                         />
                     </span>
                 </h1>
-                <p className='text-gray text-3xl max-w-[850px]'>I am a highly skilled developer with a passion for creating beautiful, functional, and user-friendly websites. My goal is to work with you to bring your vision to life and create a website that not only looks great but also performs well and provides a seamless user experience. Whether you are looking to build a new website or revamp an existing one, I am here to help. Let's work together to create something truly amazing.
+                <p className='text-gray text-3xl max-w-[850px]'>I am a highly skilled developer with a passion for creating beautiful, functional and user-friendly websites. My goal is to work with you to bring your vision to life and create a website that not only looks great but also performs well and provides a seamless user experience. Whether you are looking to build a new website or revamp an existing one, I am here to help. Let's work together to create something truly amazing.
                 </p>
                 <div className="mt-[2rem] px-2 flex space-x-7">
                     <a href="#_" class="relative px-6 py-3 font-bold text-black group">
@@ -37,12 +43,12 @@ const Hero = () => {
                         <span className="text-[18px]">Get in Touch</span>
                     </a>
                 </div>
-            </div>
-            <div className="hidden lg:flex flex-1 relative">
+            </motion.div>
+            <motion.div initial={{ x: 100 }} animate={{ x: 0 }} transition={{ duration: 0.8 }} className="hidden lg:flex flex-1 relative">
                 <a href='mailto:ntamiegbe00@gmail.com' className='text-secondary-300 hover:text-secondary-200 text-3xl absolute right-20 rotate-90 bottom-10'>
                     ntamiegbe00@gmail.com
                 </a>
-            </div>
+            </motion.div>
         </section>
     )
 }
