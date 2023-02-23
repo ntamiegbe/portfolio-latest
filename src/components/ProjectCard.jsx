@@ -1,69 +1,29 @@
-import React from 'react';
 import { FiGithub, FiExternalLink } from 'react-icons/fi'
+import imageUrlBuilder from '@sanity/image-url'
+import { useState, useEffect } from 'react';
+import ProjectCard from './Card';
 
-const ProjectCard = ({ project }) => {
-    return (
-        <div className="max-w-[30rem] dark:bg-[#2c2c2c] bg-[#595d60] px-6 pt-6 pb-2 rounded-xl shadow-lg transform hover:scale-105 transition duration-500">
-            <div className="flex items-center justify-between mb-4">
-                <h1 className="text-gray text-3xl font-bold">{project.title}</h1>
-                <div className="flex space-x-4 items-center">
-                    <a href={project.link}>
-                        <FiGithub className='text-secondary-100 hover:text-secondary-200 w-6 h-6' />
-                    </a>
-                    <a href={project.link}>
-                        <FiExternalLink className='text-secondary-100 hover:text-secondary-200 w-6 h-6' />
-                    </a>
-                </div>
-            </div>
-            <div className="relative">
-                <img className="w-full rounded-xl" src={project.image} alt="Colors" />
-            </div>
-            <h1 className="mt-4 text-gray text-[18px] font-bold">{project.description}</h1>
-            <h1 className="mt-4 text-secondary-200 text-[1.3rem] font-bold">{project.stack}</h1>
-        </div>
-    );
-};
+const builder = imageUrlBuilder({
+    projectId: 'pshyhqa6',
+    dataset: 'production',
+    apiVersion: 'v2021-10-21', // or the API version you are using
+    useCdn: true // `false` if you want to force using the Sanity API
+});
+
+function urlFor(source) {
+    return builder.image(source);
+}
 
 const ProjectSection = () => {
-    const projects = [
-        {
-            title: 'Project 1',
-            image: 'https://via.placeholder.com/250',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-            link: 'https://example.com',
-            stack: 'React, Redux, Tailwind CSS'
-        },
-        {
-            title: 'Project 2',
-            image: 'https://via.placeholder.com/150',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-            link: 'https://example.com'
-        },
-        {
-            title: 'Project 2',
-            image: 'https://via.placeholder.com/150',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-            link: 'https://example.com'
-        },
-        {
-            title: 'Project 2',
-            image: 'https://via.placeholder.com/150',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-            link: 'https://example.com'
-        },
-        {
-            title: 'Project 2',
-            image: 'https://via.placeholder.com/150',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-            link: 'https://example.com'
-        },
-        {
-            title: 'Project 2',
-            image: 'https://via.placeholder.com/150',
-            description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-            link: 'https://example.com'
-        },
-    ];
+
+    const [projects, setProjects] = useState([]);
+
+    useEffect(() => {
+        fetch('https://pshyhqa6.api.sanity.io/v2021-10-21/data/query/production?query=*%5B_type%20%3D%3D%20'projects'%5D%7B%0A%20%20_id%2C%0A%20%20%20%20githubLink%2C%0A%20%20%20%20projectImage%2C%0A%20%20%20%20projectLink%2C%0A%20%20%20%20projectName%2C%0A%7D')
+            .then(response => response.json())
+            .then(data => console.log(data.result))
+            .catch(error => console.error(error))
+    }, []);
 
     return (
         <div className="min-h-screen flex justify-center items-center py-12">

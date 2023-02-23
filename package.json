@@ -12,6 +12,7 @@
   "dependencies": {
     "@react-three/fiber": "^8.10.1",
     "@sanity/client": "^4.0.1",
+    "@sanity/image-url": "^1.0.2",
     "framer-motion": "^8.5.3",
     "react": "^18.2.0",
     "react-animated-cursor": "^2.5.2",

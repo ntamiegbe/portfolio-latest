@@ -1,8 +1,19 @@
 import { motion } from 'framer-motion';
 import { FiExternalLink, FiGithub } from 'react-icons/fi';
+import imageUrlBuilder from '@sanity/image-url'
+
+const builder = imageUrlBuilder({
+    projectId: 'pshyhqa6',
+    dataset: 'production',
+    apiVersion: 'v2021-10-21', // or the API version you are using
+    useCdn: true // `false` if you want to force using the Sanity API
+});
+
+function urlFor(source) {
+    return builder.image(source);
+}
 
 const FeaturedProject = ({ project }) => {
-
     return (
         <div className="flex flex-col items-center justify-center h-screen max-w-[600px] mx-auto py-[100px]" key={project.name}>
             <motion.div
@@ -12,7 +23,7 @@ const FeaturedProject = ({ project }) => {
                 className="relative w-full h-full overflow-hidden"
             >
                 <img
-                    src={project.image}
+                    src={urlFor(project.projectImage).url()}
                     alt={project.name}
                     className="absolute inset-0 w-full h-full object-cover rounded-md"
                 />
@@ -52,8 +63,8 @@ const FeaturedProject = ({ project }) => {
                         transition={{ duration: 1.4, delay: 1.2 }}
                         className="flex flex-wrap justify-center absolute bottom-0"
                     >
-                        {project.technologies.map((technology) => (
-                            <li className="text-secondary-200 py-2 px-4 m-2">
+                        {project.technologiesUsed.map((technology) => (
+                            <li className="text-secondary-200 py-2 px-4 m-2" key={technology}>
                                 {technology}
                             </li>
                         ))}

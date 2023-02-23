@@ -5,34 +5,20 @@ import About from './components/About'
 import Projects from './components/Projects'
 import AnimatedCursor from "react-animated-cursor"
 import FeaturedProject from './components/FeaturedProject'
+import { useState, useEffect } from 'react';
 
 function App() {
 
-  const projects = [
-    {
-      title: 'Project 1',
-      description:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.',
-      technologies: ['React', 'Tailwind CSS', 'Framer Motion'],
-      image: 'https://cdn.dribbble.com/users/1774675/screenshots/15012941/media/dd8198c65c34726f98d860982a651b97.png?compress=1&resize=400x300',
-    },
-    {
-      title: 'Project 2',
-      description:
-        'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.',
-      technologies: ['Vue', 'SCSS', 'GreenSock'],
-      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREhbMZawn3_-0Ud7jJ0tDOBGMN0hC5CqloUw&usqp=CAU',
-    },
-    {
-      title: 'Project 3',
-      description:
-        'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-      technologies: ['Angular', 'Bootstrap', 'Animate.css'],
-      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROaVxRw5J2SMF5hhCEtGy9eb6xzh0Q6syX7w&usqp=CAU',
-    },
-  ];
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    fetch('https://pshyhqa6.api.sanity.io/v2021-10-21/data/query/production?query=*%5B_type%20%3D%3D%20%27featuredProjects%27%5D%7B%0A%20%20_id%2C%0A%20%20%20%20description%2C%0A%20%20%20%20githubLink%2C%0A%20%20%20%20projectImage%2C%0A%20%20%20%20projectLink%2C%0A%20%20%20%20projectName%2C%0A%20%20%20%20technologiesUsed%0A%7D')
+      .then(response => response.json())
+      .then(data => setProjects(data.result))
+      .catch(error => console.error(error));
+  }, []);
+
   return (
-    
     <>
       <AnimatedCursor
         innerSize={8}
