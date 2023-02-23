@@ -15,7 +15,7 @@ function urlFor(source) {
 
 const FeaturedProject = ({ project }) => {
     return (
-        <div className="flex flex-col items-center justify-center h-screen max-w-[600px] mx-auto py-[100px]" key={project.name}>
+        <div className="flex flex-col items-center justify-center h-screen max-w-[600px] mx-auto py-[50px]" key={project.name}>
             <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -50,11 +50,11 @@ const FeaturedProject = ({ project }) => {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 1.2, delay: 1 }}
                         className="flex space-x-10 items-center z-30">
-                        <a href={project.link}>
-                            <FiGithub className='text-secondary-100 hover:text-secondary-200 w-6 h-6' />
+                        <a href={project.link} className='bg-white hover:bg-secondary-200 rounded-full p-2 hover:text-white text-secondary-200'>
+                            <FiGithub className='w-6 h-6' />
                         </a>
-                        <a href={project.link}>
-                            <FiExternalLink className='text-secondary-100 hover:text-secondary-200 w-6 h-6' />
+                        <a href={project.link} className='bg-white hover:bg-secondary-200 rounded-full p-2 hover:text-white text-secondary-200'>
+                            <FiExternalLink className='w-6 h-6' />
                         </a>
                     </motion.div>
                     <motion.ul

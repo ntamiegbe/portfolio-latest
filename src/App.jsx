@@ -2,6 +2,7 @@ import './index.css'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
+import Testimonial from './components/Testimonial'
 import Projects from './components/Projects'
 import AnimatedCursor from "react-animated-cursor"
 import FeaturedProject from './components/FeaturedProject'
@@ -19,7 +20,7 @@ function App() {
   }, []);
 
   return (
-    <>
+    <div className='dark:bg-dark bg-light'>
       <AnimatedCursor
         innerSize={8}
         outerSize={30}
@@ -42,19 +43,24 @@ function App() {
         ]}
       />
       <Navbar />
-      <section id='home' className="flex dark:bg-dark bg-light py-[100px] relative items-center justify-center w-full">
+      <section id='home' className="flex py-[100px] relative items-center justify-center w-full">
         <Hero />
       </section>
-      <section id='about' className='dark:bg-dark bg-light py-[20px] px-5 md:px-0'>
+      <section id='about' className='py-[20px] px-5 md:px-0'>
         <About />
       </section>
-      <section id='projects' className='dark:bg-dark bg-light px-5 md:px-0 py-[100px]'>
+      <section id='projects' className='px-5 md:px-0 py-[100px] max-w-[800px] container mx-auto flex-col'>
+        <h1 className='text-lightgray text-6xl sm:text-20px'>Web Development Creations Showcase: <b className='text-secondary-200'>My Portfolio</b></h1>
         {projects.map((project, index) => (
           <FeaturedProject key={index} project={project} />
         ))}
+        <h1 className='text-lightgray text-4xl px-4 text-center'>Other Projects</h1>
         <Projects />
       </section>
-    </>
+      <section id='testimonial' className="py-[20px] px-5 md:px-0">
+        <Testimonial />
+      </section>
+    </div>
   )
 }
 
