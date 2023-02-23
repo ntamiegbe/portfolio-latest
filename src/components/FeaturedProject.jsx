@@ -23,9 +23,9 @@ const FeaturedProject = ({ project }) => {
                 className="relative w-full h-full overflow-hidden"
             >
                 <img
-                    src={urlFor(project.projectImage).url()}
+                    src={urlFor(project.projectImage).height(300).url()}
                     alt={project.name}
-                    className="absolute inset-0 w-full h-full object-cover rounded-md"
+                    className="absolute inset-0 w-full object-cover rounded-md"
                 />
                 <div className="absolute inset-0 bg-dark opacity-70"></div>
                 <div className="absolute inset-0 flex flex-col items-center justify-center">
@@ -33,7 +33,7 @@ const FeaturedProject = ({ project }) => {
                         initial={{ opacity: 0, y: -50 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.2 }}
-                        className="text-5xl text-white font-bold mb-8"
+                        className="text-5xl text-white font-bold mb-8 z-20"
                     >
                         {project.name}
                     </motion.h1>

@@ -4,6 +4,7 @@ import Hero from './components/Hero'
 import About from './components/About'
 import Testimonial from './components/Testimonial'
 import Projects from './components/Projects'
+import Contact from './components/Contact'
 import AnimatedCursor from "react-animated-cursor"
 import FeaturedProject from './components/FeaturedProject'
 import { useState, useEffect } from 'react';
@@ -57,8 +58,11 @@ function App() {
         <h1 className='text-lightgray text-4xl px-4 text-center'>Other Projects</h1>
         <Projects />
       </section>
-      <section id='testimonial' className="py-[20px] px-5 md:px-0">
+      <section id='testimonials' className="py-[20px] px-5 md:px-0">
         <Testimonial />
+      </section>
+      <section id='contact' className="py-[20px] px-5 md:px-0">
+        <Contact />
       </section>
     </div>
   )
