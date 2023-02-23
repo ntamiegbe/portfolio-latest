@@ -5,7 +5,6 @@ import { AiOutlineClose } from "react-icons/ai"
 import { motion} from "framer-motion"
 
 import { useState } from "react";
-import { Link } from 'react-router-dom';
 import Switcher from './Switcher';
 
 export default function Navbar() {
@@ -15,9 +14,9 @@ export default function Navbar() {
         <nav className="dark:bg-dark bg-light sticky top-0 z-50">
             <div className="justify-between px-4 mx-auto lg:items-center lg:flex md:px-8">
                 <motion.div initial={{ y: -100 }} animate={{ y: 0 }} transition={{ duration: 0.5 }} className="flex items-center justify-between lg:py-4 lg:block">
-                    <Link to="/">
+                    <a href="/">
                         <img src={Logo} alt="Logo" className='w-16 h-16 rounded-full' />
-                    </Link>
+                    </a>
                     <div className="lg:hidden">
                         <button
                             className="p-2 text-gray-700"
@@ -35,31 +34,31 @@ export default function Navbar() {
                     <div className={`flex-1 justify-self-center pb-3 mt-8 lg:block lg:pb-0 lg:mt-0 ${navbar ? "block h-screen" : "hidden"}`}>
                         <motion.ul initial={{ y: -100 }} animate={{ y: 0 }} transition={{ duration: 0.7 }} className="items-center justify-center space-y-8 lg:flex lg:space-x-10 lg:space-y-0">
                             <motion.li className="text-gray hover:text-secondary-200 font-semibold text-[20px]">
-                                <a href="">
+                                <a href="#home">
                                     <span className='text-secondary-100'>01. </span>
                                     Home
                                 </a>
                             </motion.li>
                             <motion.li className="text-gray hover:text-secondary-200 font-semibold text-[20px]">
-                                <a href="">
+                                <a href="#about">
                                     <span className='text-secondary-100'>02. </span>
-                                    Skills
+                                    About
                                 </a>
                             </motion.li>
                             <motion.li className="text-gray hover:text-secondary-200 font-semibold text-[20px]">
-                                <a href="">
+                                <a href="#projects">
                                     <span className='text-secondary-100'>03. </span>
                                     Portfolio
                                 </a>
                             </motion.li>
                             <motion.li className="text-gray hover:text-secondary-200 font-semibold text-[20px]">
-                                <a href="">
+                                <a href="#testimonials">
                                     <span className='text-secondary-100'>04. </span>
                                     Testimonials
                                 </a>
                             </motion.li>
                             <motion.li className="text-gray hover:text-secondary-200 font-semibold text-[20px]">
-                                <a href="">
+                                <a href="#contact">
                                     <span className='text-secondary-100'>05. </span>
                                     Contact
                                 </a>
