@@ -17,6 +17,12 @@ export default {
             }
         },
         {
+            name: 'technologiesUsed',
+            title: 'TechnologiesUsed',
+            type: 'array',
+            of: [{ type: 'string' }]
+        },
+        {
             name: 'projectLink',
             title: 'ProjectLink',
             type: 'string'

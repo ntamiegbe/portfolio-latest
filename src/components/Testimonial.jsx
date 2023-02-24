@@ -26,16 +26,20 @@ const Testimonials = () => {
 
 
     return (
-        <div className="max-w-[800px] px-2 container mx-auto flex-col">
-            <h1 className='text-lightgray text-6xl pb-10'>User Reviews: <b className='text-secondary-200'>Honest Feedback on My Web Development Skills</b></h1>
+        <div className="max-w-[800px] px-2 container mx-auto flex-col pb-20">
+            <motion.h1
+                initial={{ y: 100, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ duration: 1 }}
+                className='text-lightgray text-6xl pb-10'>User Reviews: <b className='text-secondary-200'>Honest Feedback on My Web Development Skills</b></motion.h1>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
                 {testimonials.map((testimonial, index) => (
                     <motion.div
                         key={index}
                         className="dark:bg-[#2c2c2c] bg-[#595d60] rounded-lg shadow-lg p-6 sm:p-8 relative"
-                        initial={{ opacity: 0, y: 50 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5 }}
+                        initial={{ y: 100, opacity: 0 }}
+                        whileInView={{ y: 0, opacity: 1 }}
+                        transition={{ duration: 1, delay: 0.5 }}
                     >
                         <div className="flex items-center mb-6">
                             <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center overflow-hidden -mr-4">

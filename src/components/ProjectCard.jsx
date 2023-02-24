@@ -1,7 +1,7 @@
 import { FiGithub, FiExternalLink } from 'react-icons/fi'
 import { useState, useEffect } from 'react';
 import ProjectCard from './Card';
-
+import { motion } from "framer-motion"
 
 const ProjectSection = () => {
 
@@ -16,13 +16,18 @@ const ProjectSection = () => {
 
 
     return (
-        <div className="flex justify-center items-center py-10">
+        <motion.div
+            initial={{ y: 100, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1 }}
+            className="flex justify-center items-center py-10"
+        >
             <div className="md:px-4 md:grid md:grid-cols-2 lg:grid-cols-3 gap-8 space-y-4 md:space-y-0">
                 {projects.map((project, index) => (
                     <ProjectCard project={project} key={index} />
                 ))}
             </div>
-        </div>
+        </motion.div>
     );
 };
 

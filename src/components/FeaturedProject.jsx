@@ -17,9 +17,9 @@ const FeaturedProject = ({ project }) => {
     return (
         <div className="flex flex-col items-center justify-center h-screen max-w-[600px] mx-auto py-[50px]" key={project.name}>
             <motion.div
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
+                initial={{ y: 100, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ duration: 1, delay: 0.4 }}
                 className="relative w-full h-full overflow-hidden"
             >
                 <img
