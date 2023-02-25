@@ -17,10 +17,10 @@ const ProjectCard = ({ project }) => {
     return (
         <div className="dark:bg-[#2c2c2c] bg-[#595d60] px-6 pt-6 pb-2 rounded-xl shadow-lg transform hover:scale-105 transition duration-500">
             <div className="flex items-center justify-between mb-4">
-                <a href={project.githubLink}>
+                <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
                     <FiGithub className='text-secondary-100 hover:text-secondary-200 w-6 h-6' />
                 </a>
-                <a href={project.projectLink}>
+                <a href={project.projectLink} target="_blank" rel="noopener noreferrer">
                     <FiExternalLink className='text-secondary-100 hover:text-secondary-200 w-6 h-6' />
                 </a>
             </div>

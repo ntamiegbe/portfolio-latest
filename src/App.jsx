@@ -36,13 +36,13 @@ function App() {
         ]}
       />
       <Navbar />
-      <section id='home' className="flex items-center justify-center w-full snap-center">
+      <section id='home' className="flex items-center justify-center w-full">
         <Hero />
       </section>
-      <section id='about' className='py-[60px] px-5 md:px-0 snap-center'>
+      <section id='about' className='py-[60px] px-5 md:px-0'>
         <About />
       </section>
-      <section id='projects' className='py-[60px] px-5 md:px-0 snap-center'>
+      <section id='projects' className='py-[60px] px-5 md:px-0'>
         <motion.h1
           initial={{ y: 100, opacity: 0 }}
           whileInView={{ y: 80, opacity: 1 }}
@@ -50,7 +50,7 @@ function App() {
           className='text-lightgray text-6xl max-w-[800px] mx-auto sm:text-20px pb-40'>Web Development Creations Showcase: <b className='text-secondary-200'>My Portfolio</b></motion.h1>
         <FeaturedProject />
       </section>
-      <section className='py-[60px] px-5 md:px-0 snap-center'>
+      <section className='py-[60px] px-5 md:px-0'>
         <motion.h1
           initial={{ y: 100, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
@@ -59,10 +59,10 @@ function App() {
         </motion.h1>
         <Projects />
       </section>
-      <section id='testimonials' className="py-[60px] px-5 md:px-0 snap-center">
+      <section id='testimonials' className="py-[60px] px-5 md:px-0">
         <Testimonial />
       </section>
-      <section id='contact' className="py-[20px] px-5 md:px-0 snap-center">
+      <section id='contact' className="py-[20px] px-5 md:px-0">
         <Contact />
       </section>
     </div>

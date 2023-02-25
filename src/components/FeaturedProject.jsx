@@ -51,10 +51,10 @@ const FeaturedProject = () => {
                         </div>
                     </div>
                     
-                    <a href={project.projectLink} className="absolute top-0 right-0 m-3 p-3 rounded-full bg-secondary-200 hover:bg-secondary-100 font-semibold transition duration-300 ease-in-out">
+                    <a href={project.projectLink} target="_blank" rel="noopener noreferrer" className="absolute top-0 right-0 m-3 p-3 rounded-full bg-secondary-200 hover:bg-secondary-100 font-semibold transition duration-300 ease-in-out">
                         <FiExternalLink className="text-white text-xl" />
                     </a>
-                    <a href={project.githubLink} className="absolute top-0 left-0 m-3 p-3 rounded-full bg-secondary-200 hover:bg-secondary-100 font-semibold transition duration-300 ease-in-out">
+                    <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="absolute top-0 left-0 m-3 p-3 rounded-full bg-secondary-200 hover:bg-secondary-100 font-semibold transition duration-300 ease-in-out">
                         <FiGithub className="text-white text-xl" />
                     </a>
                 </motion.section>

@@ -15,13 +15,11 @@ export default function Switcher() {
     };
 
     return (
-        <>
-            <DarkModeSwitch
-                style={{ color: "#86C232" }}
-                checked={darkSide}
-                onChange={toggleDarkMode}
-                size={25}
-            />
-        </>
+        <DarkModeSwitch
+            style={{ color: "#86C232" }}
+            checked={darkSide}
+            onChange={toggleDarkMode}
+            size={25}
+        />
     );
 }
