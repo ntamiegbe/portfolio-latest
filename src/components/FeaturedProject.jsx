@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { FiExternalLink, FiGithub } from 'react-icons/fi';
 import imageUrlBuilder from '@sanity/image-url'
+import { useState, useEffect } from 'react';
 
 const builder = imageUrlBuilder({
     projectId: 'pshyhqa6',
@@ -13,65 +14,51 @@ function urlFor(source) {
     return builder.image(source);
 }
 
-const FeaturedProject = ({ project }) => {
+const FeaturedProject = () => {
+
+    const [projects, setProjects] = useState([]);
+
+    useEffect(() => {
+        fetch('https://pshyhqa6.api.sanity.io/v2021-10-21/data/query/production?query=*%5B_type%20%3D%3D%20%27featuredProjects%27%5D%7B%0A%20%20_id%2C%0A%20%20%20%20description%2C%0A%20%20%20%20githubLink%2C%0A%20%20%20%20projectImage%2C%0A%20%20%20%20projectLink%2C%0A%20%20%20%20projectName%2C%0A%20%20%20%20technologiesUsed%0A%7D')
+            .then(response => response.json())
+            .then(data => setProjects(data.result))
+            .catch(error => console.error(error));
+    }, []);
+
     return (
-        <div className="flex flex-col items-center justify-center h-screen max-w-[600px] mx-auto py-[50px]" key={project.name}>
-            <motion.div
-                initial={{ y: 100, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                transition={{ duration: 1, delay: 0.4 }}
-                className="relative w-full h-full overflow-hidden"
-            >
-                <img
-                    src={urlFor(project.projectImage).height(300).url()}
-                    alt={project.name}
-                    className="absolute inset-0 w-full object-cover rounded-md"
-                />
-                <div className="absolute inset-0 bg-dark opacity-70"></div>
-                <div className="absolute inset-0 flex flex-col items-center justify-center">
-                    <motion.h1
-                        initial={{ opacity: 0, y: -50 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: 0.2 }}
-                        className="text-5xl text-white font-bold mb-8 z-20"
-                    >
-                        {project.name}
-                    </motion.h1>
-                    <motion.p
-                        initial={{ opacity: 0, x: -50 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.5, delay: 0.4 }}
-                        className="text-xl text-white text-center mb-8 px-4"
-                    >
-                        {project.description}
-                    </motion.p>
-                    <motion.div
-                        initial={{ opacity: 0, x: -50 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 1.2, delay: 1 }}
-                        className="flex space-x-10 items-center z-30">
-                        <a href={project.link} className='bg-white hover:bg-secondary-200 rounded-full p-2 hover:text-white text-secondary-200'>
-                            <FiGithub className='w-6 h-6' />
-                        </a>
-                        <a href={project.link} className='bg-white hover:bg-secondary-200 rounded-full p-2 hover:text-white text-secondary-200'>
-                            <FiExternalLink className='w-6 h-6' />
-                        </a>
-                    </motion.div>
-                    <motion.ul
-                        initial={{ opacity: 0, x: 50 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 1.4, delay: 1.2 }}
-                        className="flex flex-wrap justify-center absolute bottom-0"
-                    >
-                        {project.technologiesUsed.map((technology) => (
-                            <li className="text-secondary-200 py-2 px-4 m-2" key={technology}>
-                                {technology}
-                            </li>
-                        ))}
-                    </motion.ul>
-                </div>
-                <div className="absolute inset-0 z-10"></div>
-            </motion.div>
+        <div className="max-w-[800px] px-2 container mx-auto flex-col space-y-40">
+            {projects.map((project, index) => (
+                <motion.section
+                    initial={{ y: 100, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    transition={{ duration: 1, delay: 0.3 }}
+                    className="relative rounded-lg shadow-md overflow-hidden mx-auto my-4 text-gray" key={project._id}
+                >
+                    <img className="w-full h-[30rem] object-cover" src={urlFor(project.projectImage).height(500).url()} alt={project.projectName} />
+                    <div className="p-5 dark:bg-[#2c2c2c] bg-[#595d60]">
+                        <div className="font-bold text-3xl mb-2">
+                            {project.projectName}
+                        </div>
+                        <p className="text-xl">
+                            {project.description}
+                        </p>
+                        <div className="flex items-center justify-start space-x-5 py-4">
+                            {project.technologiesUsed.map((technology, index) => (
+                                <div className="text-secondary-200" key={technology}>
+                                    {technology}
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                    
+                    <a href={project.projectLink} className="absolute top-0 right-0 m-3 p-3 rounded-full bg-secondary-200 hover:bg-secondary-100 font-semibold transition duration-300 ease-in-out">
+                        <FiExternalLink className="text-white text-xl" />
+                    </a>
+                    <a href={project.githubLink} className="absolute top-0 left-0 m-3 p-3 rounded-full bg-secondary-200 hover:bg-secondary-100 font-semibold transition duration-300 ease-in-out">
+                        <FiGithub className="text-white text-xl" />
+                    </a>
+                </motion.section>
+            ))}
         </div>
     );
 };

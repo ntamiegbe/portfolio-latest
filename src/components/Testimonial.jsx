@@ -26,7 +26,7 @@ const Testimonials = () => {
 
 
     return (
-        <div className="max-w-[800px] px-2 container mx-auto flex-col pb-20">
+        <div className="max-w-[800px] px-2 container mx-auto flex-col">
             <motion.h1
                 initial={{ y: 100, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
@@ -39,7 +39,7 @@ const Testimonials = () => {
                         className="dark:bg-[#2c2c2c] bg-[#595d60] rounded-lg shadow-lg p-6 sm:p-8 relative"
                         initial={{ y: 100, opacity: 0 }}
                         whileInView={{ y: 0, opacity: 1 }}
-                        transition={{ duration: 1, delay: 0.5 }}
+                        transition={{ duration: 1, delay: 0.2 }}
                     >
                         <div className="flex items-center mb-6">
                             <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center overflow-hidden -mr-4">

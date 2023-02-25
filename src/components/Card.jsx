@@ -28,6 +28,13 @@ const ProjectCard = ({ project }) => {
                 <img className="w-full rounded-xl" src={urlFor(project.projectImage).width(500).height(400).url()} alt={project.projectName} />
             </div>
             <h1 className="mt-4 text-gray text-[18px] font-bold">{project.projectName}</h1>
+            <div className="flex items-center space-x-1 flex-wrap">
+                {project.technologiesUsed.map((technology, index) => (
+                    <div className="text-secondary-200" key={technology}>
+                        {technology}{index === project.technologiesUsed.length - 1 ? '' : ', '}
+                    </div>
+                ))}
+            </div> 
         </div>
     );
 };

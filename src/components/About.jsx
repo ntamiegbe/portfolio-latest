@@ -4,11 +4,9 @@ import { motion } from "framer-motion"
 
 const About = () => {
     return (
-        <div className="pb-20 max-w-[800px] px-2 h-screen container mx-auto flex-col">
-            <div className="flex items-center justify-center h-[250px] relative">
-                <div className="">
-                    <Scene />
-                </div>
+        <div className="max-w-[800px] px-2 container mx-auto flex-col">
+            <div className="flex items-center w-full justify-center h-[150px] relative">
+                <Scene />
             </div>
             <div className="pb-20">
                 <motion.h1
