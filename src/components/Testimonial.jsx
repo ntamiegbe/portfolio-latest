@@ -31,7 +31,7 @@ const Testimonials = () => {
                 initial={{ y: 100, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ duration: 1 }}
-                className='text-lightgray text-6xl pb-10'>User Reviews: <b className='text-secondary-200'>Honest Feedback on My Web Development Skills</b></motion.h1>
+                className='text-lightgray md:text-6xl text-[30px] pb-10'>User Reviews: <b className='text-secondary-200'>Honest Feedback on My Web Development Skills</b></motion.h1>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
                 {testimonials.map((testimonial, index) => (
                     <motion.div

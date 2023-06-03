@@ -15,7 +15,7 @@ function urlFor(source) {
 
 const ProjectCard = ({ project }) => {
     return (
-        <div className="dark:bg-[#2c2c2c] bg-[#595d60] px-6 pt-6 pb-2 rounded-xl shadow-lg transform hover:scale-105 transition duration-500">
+        <div className="dark:bg-[#2c2c2c] bg-[#595d60] px-8 pt-6 pb-2 rounded-xl shadow-lg transform hover:scale-105 transition duration-500 w-full sm:w-auto">
             <div className="flex items-center justify-between mb-4">
                 <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
                     <FiGithub className='text-secondary-100 hover:text-secondary-200 w-6 h-6' />
@@ -34,8 +34,9 @@ const ProjectCard = ({ project }) => {
                         {technology}{index === project.technologiesUsed.length - 1 ? '' : ', '}
                     </div>
                 ))}
-            </div> 
+            </div>
         </div>
+
     );
 };
 

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import SocialMediaLinks from './SocialMediaLinks';
+// import SocialMediaLinks from './SocialMediaLinks';
 import { motion } from "framer-motion"
 import { useForm, ValidationError } from '@formspree/react';
 
@@ -20,12 +20,12 @@ const Contact = () => {
     }
 
     return (
-        <div className='max-w-[800px] px-2 container mx-auto flex-col py-20 h-screen'>
+        <div className='max-w-[800px] px-2 container mx-auto flex-col py-20 dark:bg-dark bg-light'>
             <motion.h1
                 initial={{ y: 100, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
                 transition={{ duration: 1 }}
-                className='text-lightgray text-6xl pb-10'>Let's Build Something Great Together: <b className='text-secondary-200'>Connect with Me</b>
+                className='text-lightgray md:text-6xl pb-10 text-[30px]'>Let's Build Something Great Together: <b className='text-secondary-200'>Connect with Me</b>
             </motion.h1>
             <motion.div
                 initial={{ y: 100, opacity: 0 }}
@@ -45,7 +45,7 @@ const Contact = () => {
                     </div>
                     <div>
                         <label htmlFor="email" className="block mb-2 text-secondary-200">Email</label>
-                        <input type="email" id="email" type="email" name="email" className="w-full px-4 py-2 rounded-md focus:outline-none " required />
+                        <input type="email" id="email" name="email" className="w-full px-4 py-2 rounded-md focus:outline-none " required />
                         <ValidationError
                             prefix="Email"
                             field="email"
@@ -66,7 +66,7 @@ const Contact = () => {
                     </div>
                 </form>
             </motion.div>
-            <SocialMediaLinks />
+            {/* <SocialMediaLinks /> */}
         </div>
     )
 }

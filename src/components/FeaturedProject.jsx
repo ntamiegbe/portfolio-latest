@@ -44,7 +44,7 @@ const FeaturedProject = () => {
                         </p>
                         <div className="flex items-center justify-start space-x-5 py-4">
                             {project.technologiesUsed.map((technology, index) => (
-                                <div className="text-secondary-200" key={technology}>
+                                <div className="text-secondary-200 text-center text-sm md:text-base" key={technology}>
                                     {technology}
                                 </div>
                             ))}

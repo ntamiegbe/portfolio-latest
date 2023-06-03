@@ -11,7 +11,7 @@ export default function Navbar() {
     const [navbar, setNavbar] = useState(false);
 
     return (
-        <nav className="dark:bg-dark bg-light sticky top-0 z-50 shadow py-2">
+        <nav className="dark:bg-dark bg-light sticky top-0 z-50 shadow py-1">
             <div className="justify-between px-4 mx-auto lg:items-center lg:flex md:px-8">
                 <motion.div initial={{ y: -100 }} animate={{ y: 0 }} transition={{ duration: 0.7, delay: 0.3 }} className="flex items-center justify-between lg:py-4 lg:block">
                     <a href="/">
@@ -34,31 +34,31 @@ export default function Navbar() {
                     <div className={`flex-1 justify-self-center pb-3 mt-8 lg:block lg:pb-0 lg:mt-0 ${navbar ? "block h-screen" : "hidden"}`}>
                         <motion.ul initial={{ y: -100 }} animate={{ y: 0 }} transition={{ duration: 0.7, delay: 0.5 }} className="items-center justify-center space-y-8 lg:flex lg:space-x-10 lg:space-y-0">
                             <motion.li className="text-gray hover:text-secondary-200 font-semibold text-[20px]">
-                                <a href="#home">
+                                <a href="#home" onClick={() => setNavbar(!navbar)}>
                                     <span className='text-secondary-100'>01. </span>
                                     Home
                                 </a>
                             </motion.li>
                             <motion.li className="text-gray hover:text-secondary-200 font-semibold text-[20px]">
-                                <a href="#about">
+                                <a href="#about" onClick={() => setNavbar(!navbar)}>
                                     <span className='text-secondary-100'>02. </span>
                                     About
                                 </a>
                             </motion.li>
                             <motion.li className="text-gray hover:text-secondary-200 font-semibold text-[20px]">
-                                <a href="#projects">
+                                <a href="#projects" onClick={() => setNavbar(!navbar)}>
                                     <span className='text-secondary-100'>03. </span>
                                     Portfolio
                                 </a>
                             </motion.li>
                             <motion.li className="text-gray hover:text-secondary-200 font-semibold text-[20px]">
-                                <a href="#testimonials">
+                                <a href="#testimonials" onClick={() => setNavbar(!navbar)}>
                                     <span className='text-secondary-100'>04. </span>
                                     Testimonials
                                 </a>
                             </motion.li>
                             <motion.li className="text-gray hover:text-secondary-200 font-semibold text-[20px]">
-                                <a href="#contact">
+                                <a href="#contact" onClick={() => setNavbar(!navbar)}> 
                                     <span className='text-secondary-100'>05. </span>
                                     Contact
                                 </a>
@@ -70,8 +70,9 @@ export default function Navbar() {
                             <a
                                 href='mailto:ntamiegbe00@gmail.com'
                                 className="inline-block w-full px-4 py-2 text-center text-gray bg-secondary-100 mt-3 rounded-md shadow"
+                                onClick={() => setNavbar(!navbar)}
                             >
-                                <span className="relative">Email</span>
+                                <span className="relative">Hire Me</span>
                             </a>
                         </div>
                     </div>
@@ -80,7 +81,7 @@ export default function Navbar() {
                     <a href='mailto:ntamiegbe00@gmail.com' className="relative px-6 py-3 font-bold text-black group">
                         <span className="absolute inset-0 w-full h-full transition duration-300 ease-out transform -translate-x-2 -translate-y-2 bg-secondary-100 group-hover:translate-x-0 group-hover:translate-y-0 rounded"></span>
                         <span className="absolute inset-0 w-full h-full border-2 border-secondary-300 rounded"></span>
-                        <span className="relative text-white text-[18px]">Email</span>
+                        <span className="relative text-white text-[18px]">Hire Me</span>
                     </a>
                 </motion.div>
             </div>
